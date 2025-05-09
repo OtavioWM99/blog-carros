@@ -42,3 +42,10 @@ body{
 .texto{
     font-size: calc(1.25rem + 0.6vw);
 }
+#navbar-mustang{
+    background-color: black;
+}
+#container-mustang{
+    display: flex;
+    justify-content: center;
+}
