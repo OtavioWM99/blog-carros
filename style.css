@@ -42,6 +42,15 @@ body{
 .texto{
     font-size: calc(1.25rem + 0.6vw);
 }
+.titulo-publicacao{
+    font-size: calc(0.8rem + 0.6vw);
+    font-weight: 700;
+    margin-top: 15px;
+}
+.texto-publicacao{
+    font-weight: 200;
+    margin-top: 15px;
+}
 #navbar-mustang{
     background-color: black;
 }
