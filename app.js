@@ -1,6 +1,10 @@
 angular.module('blog', []);
 
 angular.module('blog').controller('Rest', function ($scope, $http) {
+
+  $scope.modoDetalhe = false;
+  $scope.postSelecionado = null;
+
   $http.get('https://api-fake-blog.onrender.com/postagens')
     .success(function (data) {
      
@@ -11,5 +15,16 @@ angular.module('blog').controller('Rest', function ($scope, $http) {
       });
 
       $scope.publicacoes = data;
+      
     });
+
+    $scope.renderizarConteudo = function(index) {
+      $scope.postSelecionado = $scope.publicacoes[index];
+      $scope.modoDetalhe = true;
+    };
+
+    $scope.voltarParaLista = function() {
+      $scope.modoDetalhe = false;
+      $scope.postSelecionado = null;
+    };
 });

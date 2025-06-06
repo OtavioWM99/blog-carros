@@ -43,7 +43,7 @@ body{
     font-size: calc(1.25rem + 0.6vw);
 }
 .titulo-publicacao{
-    font-size: calc(0.8rem + 0.6vw);
+    font-size: calc(0.6rem + 0.6vw);
     font-weight: 700;
     margin-top: 15px;
 }
@@ -57,4 +57,10 @@ body{
 #container-mustang{
     display: flex;
     justify-content: center;
+}
+#img-post{
+    max-width: 80%;
+}
+#container-posts-api:hover {
+    cursor: pointer; 
 }

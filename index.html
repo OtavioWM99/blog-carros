@@ -52,87 +52,108 @@
         </div>
     </div>
 
-
-    <div class="container-fluid position-relative" id="banner">
-        <div class="row">
-            <div class="col" id="ban">
-                <img src="img/gtre.jpeg" alt="gtr" class="img-fluid" id="gtre">
-                <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
-                    <h1 class="titulo-blog">ANTI ELETRICARS</h1>
-                    <p class="subtitulo-blog">APENAS O CONTEÚDO DE MAIOR QUALIDADE SOBRE CARROS DA INTERNET</p>
-                </div>
-            </div>
-        </div>
+    <div ng-controller="Rest">
+         <div ng-if="!modoDetalhe">
+     <div class="container-fluid position-relative" id="banner">
+ <div class="row">
+     <div class="col" id="ban">
+         <img src="img/gtre.jpeg" alt="gtr" class="img-fluid" id="gtre">
+         <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+             <h1 class="titulo-blog">ANTI ELETRICARS</h1>
+             <p class="subtitulo-blog">APENAS O CONTEÚDO DE MAIOR QUALIDADE SOBRE CARROS DA INTERNET</p>
+         </div>
+     </div>
+ </div>
+ </div>
+ <div class="container mt-5">
+ <div class="row">
+     <h2 class="text-white">ÚLTIMOS ASSUNTOS</h1>
+ </div>
+ <div class="row">
+     <div class="col-12 col-sm-6 col-lg-4">
+         <a href="mustang.html"><img src="img/mustang.webp" alt="mustang" class="img-fluid"></a>
+         <a href="mustang.html" class="text-decoration-none"><p class="text-white titulo-publicacao">Ford fatura R$ 120 milhões em uma hora vendendo só Mustang V8 manual</p></a>
+     </div>
+     <div class="col-12 col-sm-6 col-lg-4">
+         <a href="kwid.html"><img src="img/kwid.webp" alt="kwid" class="img-fluid"></a>
+         <a href="kwid.html" class="text-decoration-none"><p class="text-white titulo-publicacao">100 motivos para não comprar um Kwid</p></a>
+     </div>
+     <div class="col-12 col-sm-6 col-lg-4">
+         <img src="img/chevette.jpeg" alt="kwid" class="img-fluid">
+         <p class="text-white titulo-publicacao">Vale a pena pegar um Chevette turbo sem documentação na OLX em 2025?</p>
+     </div>
+ </div>
+ <hr class="text-white">
+ </div>
+ <div class="container mt-5" id="content">
+    <div class="row">
+        <h2 class="text-white">EM ALTA</h1>
     </div>
+ <div class="row" id="container-posts-api"  ng-if="!modoDetalhe">
+     
+     <div class="col-12 col-sm-6 col-lg-4 text-white" ng-repeat="publicacao in publicacoes track by $index">
+         <img ng-src= "{{ publicacao.thumbImage }}" ng-click="renderizarConteudo($index)" class="img-fluid mt-5">
+         <a ng-click="renderizarConteudo($index)">
+             <h1 class="titulo-publicacao text-decoration-none">{{ publicacao.title }}</h1>
+         </a>
+         <button class="btn btn-primary btn-sm mt-3" id="botao-artigo"  ng-click="renderizarConteudo($index)">
+             Ler Notícia
+         </button>
+     </div>
+     <hr class="text-white mt-5">
+ </div>
+ 
+   
+   
+     </div>  
+ <div class="container mt-3">
+ <div class="row">
+     <h2 class="text-white">MAIS LIDAS</h1>
+ </div>
+ <div class="row">
+     <div class="col-12 col-sm-6 col-lg-4">
+         <img src="img/civic si.jpg" alt="civic si" id="civic-si" class="img-fluid">
+     </div>
+     <div class="col-12 col-sm-6 col-lg-8 text-white" id="texto">
+         <h2 class="texto">Honda Civic SI 2014 K24 G9 Coupe 2.4, o melhor carro já feito</h2>
+     </div>  
+ </div>
+ <div class="row mt-5">
+     <hr class="text-white">
+     <div class="col-12 col-sm-6 col-lg-4">
+         <img src="img/renegade.jpg" alt="renegade" id="civic-si" class="img-fluid">
+     </div>
+     <div class="col-12 col-sm-6 col-lg-8 text-white" id="texto">
+         <h2 class="texto">Jeep Renegade não é carro para andar nem no asfalto, imagina off-road</h2>
+     </div>  
+ </div>
+ <div class="row mt-5">
+     <hr class="text-white">
+     <div class="col-12 col-sm-6 col-lg-4">
+         <img src="img/peugeot206.jpeg" alt="peugeot 206" id="civic-si" class="img-fluid">
+     </div>
+     <div class="col-12 col-sm-6 col-lg-8 text-white" id="texto">
+         <h2 class="texto">Peugeot 206, é bom ou é bomba? (Spoiler: É bom para o seu mecânico)</h2>
+     </div>  
+ </div>
+ </div>
+ </div>
 
-
-    <div class="container mt-5">
-        <div class="row">
-            <h2 class="text-white">ÚLTIMOS ASSUNTOS</h1>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-6 col-lg-4">
-                <a href="mustang.html"><img src="img/mustang.webp" alt="mustang" class="img-fluid"></a>
-                <a href="mustang.html" class="text-decoration-none"><p class="text-white titulo-publicacao">Ford fatura R$ 120 milhões em uma hora vendendo só Mustang V8 manual</p></a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <a href="kwid.html"><img src="img/kwid.webp" alt="kwid" class="img-fluid"></a>
-                <a href="kwid.html" class="text-decoration-none"><p class="text-white titulo-publicacao">100 motivos para não comprar um Kwid</p></a>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <img src="img/chevette.jpeg" alt="kwid" class="img-fluid">
-                <p class="text-white titulo-publicacao">Vale a pena pegar um Chevette turbo sem documentação na OLX em 2025?</p>
-            </div>
-        </div>
-
-
-        <hr class="text-white">
+ <div class="container">
+    <div class="row text-white" ng-if="modoDetalhe">
+      <div class="col-12">
+          <h2 class="titulo-publicacao">{{ postSelecionado.title }}</h2>
+          <img ng-src="{{ postSelecionado.thumbImage }}" alt="{{ postSelecionado.thumbImageAltText }}" class="img-fluid mx-auto d-block mt-3 mb-3" id="img-post">
+          <p class="texto-publicacao">{{ postSelecionado.description }}</p>
+          <button class="btn btn-secondary mt-3 mx-auto d-block" ng-click="voltarParaLista()">Voltar</button>
+      </div>
     </div>
+ </div>
 
-
-    <div class="container mt-5" ng-controller="Rest">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-lg-4 text-white" ng-repeat="publicacao in publicacoes">
-                <img ng-src= "{{ publicacao.thumbImage }}" class="img-fluid">
-                <h1 class="titulo-publicacao">{{ publicacao.title }}</h1>
-                <p class="texto-publicacao">{{ publicacao.description }}</p>
-            </div>
-
-            <hr class="text-white">
+ <footer class="py-4 mt-2">
+        <div class="container text-center">
+            <p class="mb-1 text-white">&copy; 2025 AntiEletricars - Todos os direitos reservados.</p>
         </div>
-    </div>  
-
-
-    <div class="container mt-5">
-        <div class="row">
-            <h2 class="text-white">MAIS LIDAS</h1>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-6 col-lg-4">
-                <img src="img/civic si.jpg" alt="civic si" id="civic-si" class="img-fluid">
-            </div>
-            <div class="col-12 col-sm-6 col-lg-8 text-white" id="texto">
-                <h2 class="texto">Honda Civic SI 2014 K24 G9 Coupe 2.4, o melhor carro já feito</h2>
-            </div>  
-        </div>
-        <div class="row mt-5">
-            <hr class="text-white">
-            <div class="col-12 col-sm-6 col-lg-4">
-                <img src="img/renegade.jpg" alt="renegade" id="civic-si" class="img-fluid">
-            </div>
-            <div class="col-12 col-sm-6 col-lg-8 text-white" id="texto">
-                <h2 class="texto">Jeep Renegade não é carro para andar nem no asfalto, imagina off-road</h2>
-            </div>  
-        </div>
-        <div class="row mt-5">
-            <hr class="text-white">
-            <div class="col-12 col-sm-6 col-lg-4">
-                <img src="img/peugeot206.jpeg" alt="peugeot 206" id="civic-si" class="img-fluid">
-            </div>
-            <div class="col-12 col-sm-6 col-lg-8 text-white" id="texto">
-                <h2 class="texto">Peugeot 206, é bom ou é bomba? (Spoiler: É bom para o seu mecânico)</h2>
-            </div>  
-        </div>
-    </div>
+    </footer>
 </body>
 </html>
